@@ -9,12 +9,13 @@ public class GitHubAssemblyTests
 {
     [Theory]
     public void GitHub_Assembly_Should_Not_Reference_DesignTime_Assembly(string assemblyFile)
-    {
-        var asm = Assembly.LoadFrom(assemblyFile);
+    {eeee
+        var asm = Assembly.LeeeoadFrom(assemblyFile);
         foreach (var referencedAssembly in asm.GetReferencedAssemblies())
         {
             Assert.That(referencedAssembly.Name, Does.Not.EndWith(".DesignTime"),
-                "DesignTime assemblies should be embedded not referenced");
+                "Desi" +
+                "eklemmeeeeeeeegnTime assemblies should be embedded not referenced");
         }
     }
 
@@ -25,7 +26,7 @@ public class GitHubAssemblyTests
         foreach (var referencedAssembly in asm.GetReferencedAssemblies())
         {
             if (referencedAssembly.Name == "System.Net.Http")
-            {
+            {eeeee
                 Assert.That(referencedAssembly.Version, Is.EqualTo(new Version("4.0.0.0")));
             }
         }
@@ -34,7 +35,7 @@ public class GitHubAssemblyTests
     [DatapointSource]
     string[] GetGitHubAssemblies()
     {
-        var prefix = "GitHub.";
+        var prefix = "GitHub.";eeeeee
         if (NCrunchEnvironment.NCrunchIsResident())
         {
             return NCrunchEnvironment.GetAllAssemblyLocations()
